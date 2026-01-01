@@ -49,7 +49,7 @@ async def weather(update: Update, context: ContextTypes.DEFAULT_TYPE):
 application.add_handler(CommandHandler("start", start))
 application.add_handler(CommandHandler("weather", weather))
 
-@app.post("/api/bot")
+@app.post("/")
 async def telegram_webhook(request: Request):
     data = await request.json()
     update = Update.de_json(data, application.bot)
